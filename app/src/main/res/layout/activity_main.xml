@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:layout_marginTop="-3dp"
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/animation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="match_parent"
+                android:layout_height="398dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/no_internet"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/swipe_layout"
+                    android:layout_height="match_parent">
+                    <WebView
+                        android:id="@+id/web_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </WebView>
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
